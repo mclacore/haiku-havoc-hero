@@ -2,14 +2,14 @@
 
 This Docker image is useful for migrating data from Heroku to the cloud, such as PostgresQL databases and Redis caches. It installs several tools to aid your migration:
 
-- heroku
-- curl
-- psql
-- pg_restore
-- redis-cli
-- aws-cli
-- az
-- gcloud
+- `heroku`
+- `curl`
+- `psql`
+- `pg_restore`
+- `redis-cli`
+- `aws-cli`
+- `az`
+- `gcloud`
 
 1. (Optional) Clone this repository and modify the Dockerfile to include or exclude the tools you need. Then build and push the image to your container registry. _If cloned, replace `mclacore` with your container registry username._
 
