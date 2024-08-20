@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: haiku-havoc-hero-pod
+  namespace: default
+spec:
+  containers:
+    - name: haiku-havoc-hero-container
+      image: mclacore/haiku-havoc-hero:latest
+      env:
+        - name: POSTGRES_PASSWORD
+          value: password
+
