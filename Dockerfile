@@ -1,6 +1,6 @@
 FROM --platform=linux/amd64 python:3.12-slim-bullseye
 
-# Install needed tools, psql, redis-cli, and Heroku CLI
+# Install needed tools, psql, mysql, redis, and Heroku CLI
 RUN apt update && apt install -y curl unzip postgresql redis && \
 	curl https://cli-assets.heroku.com/install.sh -o /tmp/heroku.sh && \
 	chmod +x /tmp/heroku.sh && \
