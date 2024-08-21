@@ -38,4 +38,9 @@ kubectl apply -f /path/to/manifest.yaml
 
 For an in-depth migration guide, see [Migrate from Heroku to Azure](https://github.com/mclacore/heroku-to-azure).
 
-> [!todo] setup curl for [mysql-shell](https://dev.mysql.com/downloads/shell/)
+<details>
+<summary>TODO</summary>
+
+setup curl for [mysql-shell](https://dev.mysql.com/downloads/shell/)
+
+</details>
