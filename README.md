@@ -41,6 +41,6 @@ For an in-depth migration guide, see [Migrate from Heroku to Azure](https://gith
 <details>
 <summary>TODO</summary>
 
-setup curl for [mysql-shell](https://dev.mysql.com/downloads/shell/)
+- setup curl for [mysql-shell](https://dev.mysql.com/downloads/shell/)
 
 </details>
