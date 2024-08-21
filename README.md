@@ -19,12 +19,13 @@ This Docker image is useful for migrating data from Heroku to the cloud, such as
 apiVersion: v1
 kind: Pod
 metadata:
-  name: haiku-havoc-hero-pod
+  name: haiku-havoc-hero
   namespace: default
 spec:
   containers:
-    - name: haiku-havoc-hero-container
+    - name: haiku-havoc-hero
       image: mclacore/haiku-havoc-hero:latest
+      imagePullPolicy: Always
       env:
         - name: POSTGRES_PASSWORD # Required for psql and pg_restore
           value: password
