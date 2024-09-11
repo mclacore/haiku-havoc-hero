@@ -11,4 +11,3 @@ spec:
       env:
         - name: POSTGRES_PASSWORD
           value: password
-
