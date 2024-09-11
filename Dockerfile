@@ -10,23 +10,23 @@ RUN apt install -y ca-certificates lsb-release && \
 	apt update && apt install -y postgresql
 
 #TODO: Uncomment to install Azure CLI
-RUN curl -sL https://aka.ms/InstallAzureCLIDeb -o /tmp/azure-cli.sh && \
-	chmod +x /tmp/azure-cli.sh && \
-	/tmp/azure-cli.sh && \
-	rm /tmp/azure-cli.sh
+# RUN curl -sL https://aka.ms/InstallAzureCLIDeb -o /tmp/azure-cli.sh && \
+# 	chmod +x /tmp/azure-cli.sh && \
+# 	/tmp/azure-cli.sh && \
+# 	rm /tmp/azure-cli.sh
 
 #TODO: Uncomment to install AWS CLI
-RUN curl https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o /tmp/awscliv2.zip && \
-	unzip /tmp/awscliv2.zip -d /tmp && \
-	/tmp/aws/install && \
-	rm /tmp/awscliv2.zip
+# RUN curl https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o /tmp/awscliv2.zip && \
+# 	unzip /tmp/awscliv2.zip -d /tmp && \
+# 	/tmp/aws/install && \
+# 	rm /tmp/awscliv2.zip
 
 #TODO: Uncomment to install Google Cloud CLI
-RUN curl https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-linux-x86_64.tar.gz -o /tmp/google-cloud-cli.tar.gz && \
-	tar -xf /tmp/google-cloud-cli.tar.gz -C /tmp && \
-	/tmp/google-cloud-sdk/install.sh --quiet --path-update true && \
-	rm /tmp/google-cloud-cli.tar.gz
-ENV PATH=$PATH:/tmp/google-cloud-sdk/bin
+# RUN curl https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-linux-x86_64.tar.gz -o /tmp/google-cloud-cli.tar.gz && \
+# 	tar -xf /tmp/google-cloud-cli.tar.gz -C /tmp && \
+# 	/tmp/google-cloud-sdk/install.sh --quiet --path-update true && \
+# 	rm /tmp/google-cloud-cli.tar.gz
+# ENV PATH=$PATH:/tmp/google-cloud-sdk/bin
 
 # Install Heroku CLI
 RUN curl https://cli-assets.heroku.com/install.sh -o /tmp/heroku.sh && \
