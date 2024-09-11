@@ -1,0 +1,23 @@
+name: Docker Image CI
+
+on:
+  workflow_dispatch:
+    inputs:
+      image-tag:
+        description: 'Tag for the Docker image'
+        required: true
+        default: 'latest'
+
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag mclacore/haiku-havoc-hero:${{ github.event.inputs.image-tag }}
