@@ -5,9 +5,23 @@ metadata:
   namespace: default
 spec:
   containers:
-    - name: haiku-havoc-hero
-      image: mclacore/haiku-havoc-hero:latest
-      imagePullPolicy: Always
+    # Comment out the containers you don't need
+    - name: postgres
+      image: mclacore/haiku-havoc-hero:postgres-v1
       env:
         - name: POSTGRES_PASSWORD
           value: password
+    - name: mysql
+      image: mclacore/haiku-havoc-hero:mysql-v1
+      env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: password
+    - name: redis
+      image: mclacore/haiku-havoc-hero:redis-v1
+    - name: mongo
+      image: mclacore/haiku-havoc-hero:mongo-v1
+    - name: mssql
+      image: mclacore/haiku-havoc-hero:mssql-v1
+      env:
+        - name: PATH
+          value: "/opt/mssql-tools/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/tmp/google-cloud-sdk/bin"
