@@ -1,13 +1,7 @@
 FROM python:3.12-slim-bullseye
 
 # Install needed tools
-RUN apt update && apt install -y curl zip unzip redis
-
-RUN apt install -y ca-certificates lsb-release && \
-	install -d /usr/share/postgresql-common/pgdg && \
-	curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc && \
-	sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list' && \
-	apt update && apt install -y postgresql
+RUN apt update && apt install -y curl zip unzip
 
 #TODO: Uncomment to install Azure CLI
 # RUN curl -sL https://aka.ms/InstallAzureCLIDeb -o /tmp/azure-cli.sh && \
@@ -27,6 +21,13 @@ RUN apt install -y ca-certificates lsb-release && \
 # 	/tmp/google-cloud-sdk/install.sh --quiet --path-update true && \
 # 	rm /tmp/google-cloud-cli.tar.gz
 # ENV PATH=$PATH:/tmp/google-cloud-sdk/bin
+
+# Install Postgres and Redis
+RUN apt install -y ca-certificates lsb-release redis && \
+	install -d /usr/share/postgresql-common/pgdg && \
+	curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc && \
+	sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list' && \
+	apt update && apt install -y postgresql
 
 # Install Heroku CLI
 RUN curl https://cli-assets.heroku.com/install.sh -o /tmp/heroku.sh && \
